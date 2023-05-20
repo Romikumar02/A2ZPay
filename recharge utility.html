@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recharge and Bill Payment</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-4">Recharge and Bill Payment</h1>
+      <form id="payment-form">
+        <div class="form-group">
+          <label for="service-type">Select Service Type</label>
+          <select class="form-control" id="service-type" name="service-type">
+            <option value="mobile">Mobile Recharge</option>
+            <option value="dth">DTH Recharge</option>
+            <option value="data-card">Data Card Recharge</option>
+            <option value="electricity">Electricity Bill Payment</option>
+            <option value="gas">Gas Bill Payment</option>
+            <option value="water">Water Bill Payment</option>
+            <option value="broadband">Broadband Bill Payment</option>
+            <option value="insurance">Insurance Premium Payment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="number">Enter Your Number or Bill Number</label>
+          <input type="text" class="form-control" id="number" name="number">
+        </div>
+        <div class="form-group">
+          <label for="operator">Select Operator or Service Provider</label>
+          <select class="form-control" id="operator" name="operator">
+            <option value="airtel">Airtel</option>
+            <option value="jio">Jio</option>
+            <option value="vodafone-idea">Vodafone-Idea</option>
+            <option value="tata-sky">Tata Sky</option>
+            <option value="airtel-digital-tv">Airtel Digital TV</option>
+            <option value="dish-tv">Dish TV</option>
+            <option value="bses">BSES</option>
+            <option value="tata-power">Tata Power</option>
+            <option value="reliance-energy">Reliance Energy</option>
+            <option value="indane">Indane</option>
+            <option value="bharat-gas">Bharat Gas</option>
+            <option value="hp-gas">HP Gas</option>
+            <option value="broadband">Broadband Provider</option>
+            <option value="lic">LIC</option>
+            <option value="icici-prudential">ICICI Prudential</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="amount">Enter Payment Amount</label>
+          <input type="number" class="form-control" id="amount" name="amount">
+        </div>
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+      </form>
+      <div id="message"></div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+    // Listen for form submission
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+    // Get the form data
+    var formData = new FormData(event.target);
+    // Prepare the API request payload
+    var payload = {
+    serviceType: formData.get('service-type'),
+    number: formData.get('number'),
+    operator: formData.get('operator'),
+    amount: formData.get('amount')
+    };
+    // Make the API request
+    makePayment(payload);
+    });
+    // Function to make the API request
+    function makePayment(payload) {
+    // Make an API request to process the payment
+    // Replace the following code with your actual API call
+    // This is just a dummy example
+    var message = document.getElementById('message');
+    message.innerHTML = '<div class="alert alert-info" role="alert">Processing your payment...</div>';
+    setTimeout(function() {
+    message.innerHTML = '<div class="alert alert-success" role="alert">Payment successful!</div>';
+    }, 2000);
+    }
+    </script>
+    
+      </body>
+    </html>
