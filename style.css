@@ -9,6 +9,31 @@ body {
   background-color: #ffff;
 }
 
+ .dropdown .dropdown-menu  {
+  /* display: block; */
+  margin-top: 1.5rem;
+  border: 3px solid #09a4e8;
+  width: 100rem;
+  height: 30rem;
+  margin-left: -35rem;
+}
+
+
+
+
+
+.services {
+  display: none;
+}
+
+.services.open {
+  display: block;
+}
+
+.dropdown-menu a{
+  text-decoration: none;
+}
+
 .nav-link:hover{
   color: #09a4e8;
 }
